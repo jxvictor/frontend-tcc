@@ -42,6 +42,16 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Node modules
+/node_modules
+
+# Compiled output
+/dist
+/out
+
+# Cache files
+/.angular/cache
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
