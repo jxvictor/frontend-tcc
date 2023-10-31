@@ -1,0 +1,71 @@
+<div class="content">
+
+    <div class="title">
+        <h1>Controle de estoque entrada/saída de produtos</h1>
+    </div>
+  
+    <button class="mat-elevation-z8" (click)="navegarParaCategoriaCreateEntrada()" mat-raised-button color="primary">ADICIONAR ENTRADA</button>
+    <button class="mat-elevation-z8" (click)="navegarParaCategoriaCreate()" mat-raised-button color="primary">ADICIONAR SAÍDA</button>
+    <div class="mat-elevation-z8 content-table">
+        <table class="table" mat-table [dataSource]="estoques">
+  
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="produto">
+                <th mat-header-cell *matHeaderCellDef> PRODUTO </th>
+                <td mat-cell *matCellDef="let row" (click)="abrirDetalhesDoProduto(row.produto)"> {{ row.produto.nome }} </td>
+            </ng-container>              
+
+            <ng-container matColumnDef="valor">
+                <th mat-header-cell *matHeaderCellDef> VALOR UNITÁRIO</th>
+                <td mat-cell *matCellDef="let row"> {{ row.valor }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="quantidade">
+                <th mat-header-cell *matHeaderCellDef> QUANTIDADE </th>
+                <td mat-cell *matCellDef="let row"> {{ row.quantidade }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="formaDePagamento">
+                <th mat-header-cell *matHeaderCellDef> FORMA DE PAGAMENTO </th>
+                <td mat-cell *matCellDef="let row"> {{ row.formaDePagamento }} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef> DATA </th>
+                <td mat-cell *matCellDef="let row"> {{ row.data }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="tipo">
+                <th mat-header-cell *matHeaderCellDef> TIPO </th>
+                <td mat-cell *matCellDef="let row"> {{ row.tipo }} </td>
+              </ng-container>
+  
+  
+              <!-- Symbol Column -->
+            <ng-container matColumnDef="acoes">
+                <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
+                <td mat-cell *matCellDef="let row">
+                    <a class="edit" routerLink="update/{{ row.id }}" *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_MOD')">
+                      <i class="material-icons">edit</i>
+                    </a>
+                    <a class="delete" routerLink="delete/{{ row.id }}" *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_ADMIN')">
+                      <i class="material-icons">delete</i>
+                    </a>
+                </td>
+              </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'entrada': row.tipo === 'Entrada', 'saida': row.tipo === 'Saída'}"></tr>
+          </table>
+          <mat-paginator [length]="200"
+          [pageSizeOptions]="[10, 20, 30, 40, 50, 100, 200]"
+          (page)="pageEvent = $event; onPaginateChange($event)"
+          aria-label="Select page">
+          </mat-paginator>
+    </div>
+  </div>

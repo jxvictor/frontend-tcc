@@ -1,0 +1,27 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav mode="side" [opened]="isSidenavOpen">
+      <mat-nav-list>
+        <a routerLink="/home" mat-list-item>
+          Home
+        </a>
+        <a routerLink="/produto" mat-list-item>
+          Produtos
+        </a>
+        <a routerLink="/estoque" mat-list-item>
+          Controle Entrada/Saída
+        </a>
+        <a routerLink="/usuario" mat-list-item *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_MODERATOR') || storageService.getUser().roles.includes('ROLE_ADMIN')">
+          Usuários
+        </a>
+        <a (click)="deslogar()"class="logout" mat-list-item>
+            Logout
+        </a>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>

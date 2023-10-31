@@ -1,0 +1,18 @@
+<form>
+  <h1>DELETANDO PRODUTO</h1>
+
+  <mat-form-field class="form">
+      <mat-label>Nome Produto</mat-label>
+      <input matInput [(ngModel)]="produto.nome" type="text" name="nome" disabled>
+  </mat-form-field>
+  <mat-form-field class="form">
+    <mat-label>Referência</mat-label>
+    <input matInput [(ngModel)]="produto.referencia" type="text" name="referencia" disabled>
+</mat-form-field>
+
+  <div class="buttons">
+      <button (click)="delete()" class="mat-elevation-z8" mat-raised-button color="accent"> DELETAR </button>
+      <button (click)="cancel()" class="mat-elevation-z8" mat-raised-button color="warn"> CANCELAR </button>
+  </div>
+
+</form>

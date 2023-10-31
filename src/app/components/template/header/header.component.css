@@ -1,0 +1,21 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-spacer2 {
+  flex: 1; /* Use "1" para ocupar todo o espaço restante à direita do logotipo */
+  margin-left: 0.2rem;
+}
+
+.menu-icon {
+  /* Estilos para o ícone do menu */
+  margin-right: 0.2rem;
+  color: #ffffff;
+}
+
+.header {
+  font-family: 'Times New Roman', Times, serif;
+  display: flex; /* Tornar o cabeçalho um flex container */
+  align-items: center; /* Alinhar verticalmente no centro */
+  font-size: 26px;
+}

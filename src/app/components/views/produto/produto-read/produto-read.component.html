@@ -1,0 +1,113 @@
+<div class="content">
+
+    <div class="title">
+        <h1>Lista de produtos cadastrados</h1>
+    </div>
+  
+    <button class="mat-elevation-z8" (click)="navegarParaCategoriaCreate()" mat-raised-button color="primary">ADICIONAR PRODUTO</button>
+    <div class="mat-elevation-z8 content-table">
+        <table class="table" mat-table [dataSource]="produtos">
+  
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="nome">
+              <th mat-header-cell *matHeaderCellDef> NOME PRODUTO </th>
+              <td mat-cell *matCellDef="let row"> {{ row.nome }} </td>
+            </ng-container>
+  
+            <!-- Weight Column -->
+            <ng-container matColumnDef="ano">
+              <th mat-header-cell *matHeaderCellDef> ANO </th>
+              <td mat-cell *matCellDef="let row"> {{ row.ano }} </td>
+            </ng-container>
+            <!-- Weight Column -->
+            <ng-container matColumnDef="modelo">
+              <th mat-header-cell *matHeaderCellDef> MODELO </th>
+              <td mat-cell *matCellDef="let row"> {{ row.modelo }} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="motor">
+              <th mat-header-cell *matHeaderCellDef> MOTOR </th>
+              <td mat-cell *matCellDef="let row"> {{ row.motor }} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="numeroDeMotor">
+              <th mat-header-cell *matHeaderCellDef> NÚMERO DE MOTOR </th>
+              <td mat-cell *matCellDef="let row"> {{ row.numeroDeMotor }} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="cor">
+              <th mat-header-cell *matHeaderCellDef> COR </th>
+              <td mat-cell *matCellDef="let row"> {{ row.cor }} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="referencia">
+              <th mat-header-cell *matHeaderCellDef> REFERÊNCIA </th>
+              <td mat-cell *matCellDef="let row"> {{ row.referencia }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="marca">
+              <th mat-header-cell *matHeaderCellDef> MARCA </th>
+              <td mat-cell *matCellDef="let row"> {{ row.marca }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="lado">
+              <th mat-header-cell *matHeaderCellDef> LADO </th>
+              <td mat-cell *matCellDef="let row"> {{ row.lado }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dianteira">
+              <th mat-header-cell *matHeaderCellDef> DIANTEIRA </th>
+              <td mat-cell *matCellDef="let row"> {{ row.dianteira }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="traseira">
+              <th mat-header-cell *matHeaderCellDef> TRASEIRA </th>
+              <td mat-cell *matCellDef="let row"> {{ row.traseira }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="foto">
+              <th mat-header-cell *matHeaderCellDef> FOTO </th>
+              <td mat-cell *matCellDef="let row">
+                <img [src]="row.foto" alt="foto" width="100">
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="valor">
+              <th mat-header-cell *matHeaderCellDef> VALOR </th>
+              <td mat-cell *matCellDef="let row"> {{ row.valor }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="quantidade">
+              <th mat-header-cell *matHeaderCellDef> QUANTIDADE DISPONÍVEL </th>
+              <td mat-cell *matCellDef="let row"> {{ row.quantidade }} </td>
+            </ng-container>
+  
+  
+              <!-- Symbol Column -->
+            <ng-container matColumnDef="acoes">
+                <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
+                <td mat-cell *matCellDef="let row">
+                    <a class="edit" routerLink="update/{{ row.id }}">
+                      <i class="material-icons">edit</i>
+                    </a>
+                    <a class="delete" routerLink="delete/{{ row.id }}">
+                      <i class="material-icons">delete</i>
+                    </a>
+                </td>
+              </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="abrirDetalhesDoProduto(row)"></tr>
+          </table>
+          <mat-paginator [length]="200"
+          [pageSizeOptions]="[10, 20, 30, 40, 50, 100, 200]"
+          (page)="pageEvent = $event; onPaginateChange($event)"
+          aria-label="Select page">
+          </mat-paginator>
+    </div>
+  </div>

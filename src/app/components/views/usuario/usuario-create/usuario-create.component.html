@@ -1,0 +1,26 @@
+<form>
+    <h1>CRIANDO NOVO USUÁRIO</h1>
+  
+    <mat-form-field class="form">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="usuario.username" type="text" name="username" placeholder="Ex: jvictor">
+    </mat-form-field>
+    <mat-form-field class="form">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="usuario.password" type="password" name="password" placeholder="">
+  </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Role (Autorização)</mat-label>
+        <mat-select [(ngModel)]="usuario.roles" name="role">
+            <mat-option value="ADMIN">ADMIN</mat-option>
+            <mat-option value="USER">USER</mat-option>
+        </mat-select>
+    </mat-form-field>
+  
+  
+    <div class="buttons">
+        <button (click)="create()" class="mat-elevation-z8" mat-raised-button color="primary"> CRIAR </button>
+        <button (click)="cancel()" class="mat-elevation-z8" mat-raised-button color="warn"> CANCELAR </button>
+    </div>
+  
+  </form>

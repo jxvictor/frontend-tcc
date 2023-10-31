@@ -1,0 +1,43 @@
+/* produto-details.component.css */
+.modal-container {
+  max-width: 100%; /* Change the maximum width to 100% for responsiveness */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-item {
+  margin-bottom: 10px;
+}
+
+.modal-label {
+  font-weight: bold;
+}
+
+/* Apply responsive styles for screens with a maximum width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+  .modal-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+    border-radius: 0; /* Remove border-radius for a cleaner look on small screens */
+  }
+
+  .modal-title {
+    font-size: 20px; /* Reduce font size for smaller screens */
+  }
+
+  .modal-item {
+    margin-bottom: 8px; /* Reduce margin for smaller screens */
+  }
+
+  .modal-label {
+    font-weight: normal; /* Remove bold font weight for labels on small screens */
+  }
+}
