@@ -7,58 +7,23 @@
         <mat-error *ngIf="nome.invalid">{{getMessage()}}</mat-error>
     </mat-form-field>
     <mat-form-field class="form">
-      <mat-label>Ano</mat-label>
-      <input matInput [formControl]='ano' [(ngModel)]="produto.ano" type="number" name="ano" placeholder="Ex: 2010">
-      <mat-error *ngIf="nome.invalid">{{getMessage()}}</mat-error>
-  </mat-form-field>
-    <mat-form-field class="form">
       <mat-label>Modelo</mat-label>
       <input matInput [(ngModel)]="produto.modelo" type="text" name="modelo" placeholder="Ex: severino@gmail.com">
     </mat-form-field>
-    <mat-form-field class="form">
-      <mat-label>Motor</mat-label>
-      <input matInput [(ngModel)]="produto.motor" type="text" name="motor" placeholder="Ex: severino@gmail.com">
-    </mat-form-field>
-    <mat-form-field class="form">
-        <mat-label>Número de motor</mat-label>
-        <input matInput [(ngModel)]="produto.numeroDeMotor" type="text" name="numeroDeMotor" placeholder="Ex: 5455s65651000">
-      </mat-form-field>
-      <mat-form-field class="form">
-        <mat-label>Cor</mat-label>
-        <input matInput [(ngModel)]="produto.cor" type="text" name="cor" placeholder="Ex: Branco">
-      </mat-form-field>
-      <mat-form-field class="form">
-        <mat-label>Referência</mat-label>
-        <input matInput [(ngModel)]="produto.referencia" type="text" name="referencia" placeholder="Ex: 556a887u56689u">
-      </mat-form-field>
       <mat-form-field class="form">
         <mat-label>Marca</mat-label>
         <input matInput [(ngModel)]="produto.marca" type="text" name="marca" placeholder="Ex: Peugeot">
       </mat-form-field>
       
       <mat-form-field class="form">
-        <mat-label>Lado</mat-label>
-        <mat-select [(ngModel)]="produto.lado" name="lado">
-          <mat-option value="Esquerdo">Esquerdo</mat-option>
-          <mat-option value="Direito">Direito</mat-option>
-          <mat-option value="Nenhum">Nenhum</mat-option>
-        </mat-select>
-      </mat-form-field>
-      
-      <mat-form-field class="form">
-        <mat-label>Dianteira</mat-label>
-        <input matInput [(ngModel)]="produto.dianteira" type="text" name="dianteira" placeholder="Ex: severino@gmail.com">
-      </mat-form-field>
-
-      <mat-form-field class="form">
-        <mat-label>Traseira</mat-label>
-        <input matInput [(ngModel)]="produto.traseira" type="text" name="traseira" placeholder="Ex: Sim">
+        <mat-label>Descrição</mat-label>
+        <input matInput [(ngModel)]="produto.descricao" type="text" name="descricao" placeholder="Ex: severino@gmail.com">
       </mat-form-field>
 
       <mat-form-field class="form">
         <mat-label>Valor unitário</mat-label>
-        <input matInput [formControl]="valor" required [(ngModel)]="produto.valor" type="number" name="valor" placeholder="Ex: 50.00">
-        <mat-error *ngIf="valor.invalid">{{getMessage()}}</mat-error>
+        <input matInput [formControl]="valorUnitario" required [(ngModel)]="produto.valorUnitario" type="number" name="valorUnitario" placeholder="Ex: 50.00">
+        <mat-error *ngIf="valorUnitario.invalid">{{getMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field class="form">
         <mat-label>Quantidade</mat-label>

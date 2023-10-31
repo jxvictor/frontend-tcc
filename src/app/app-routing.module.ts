@@ -49,7 +49,7 @@ const routes: Routes = [
     children: 
     [
       { 
-        path: 'home', component: HomeComponent 
+        path: 'home', component: HomeComponent
       },
       {
         path: 'produto', component: ProdutoReadComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MOD', 'ROLE_ADMIN'] }
@@ -98,10 +98,10 @@ const routes: Routes = [
         path: 'produto/details',
         component: ProdutoDetailsComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MOD', 'ROLE_ADMIN'] }
       },
-      { path: 'profile', component: ProfileComponent },
-      { path: 'user', component: BoardUserComponent },
-      { path: 'mod', component: BoardModeratorComponent },
-      { path: 'admin', component: BoardAdminComponent },
+      { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MOD', 'ROLE_ADMIN', 'ROLE_USER'] } },
+      { path: 'user', component: BoardUserComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_USER'] } },
+      { path: 'mod', component: BoardModeratorComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MOD'] } },
+      { path: 'admin', component: BoardAdminComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_ADMIN'] } },
     ],
   }
 ];

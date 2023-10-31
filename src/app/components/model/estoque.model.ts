@@ -4,8 +4,7 @@ export interface Estoque {
     id?: string;
     produto?: Produto;
     quantidade?: bigint;
-    valor?: number;
-    formaDePagamento?: string;
+    valorUnitario?: number;
     data?: Date;
     tipo?: string;
 }

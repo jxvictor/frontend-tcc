@@ -12,7 +12,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class ProdutoUpdateComponent implements OnInit {
   produto: Produto = {};
   nome = new FormControl('', [Validators.required]);
-  valor = new FormControl('', [Validators.required]);
+  valorUnitario = new FormControl('', [Validators.required]);
   quantidade = new FormControl('', [Validators.required]);
 
   constructor(
@@ -30,19 +30,11 @@ export class ProdutoUpdateComponent implements OnInit {
     this.service.findById(this.produto.id!).subscribe((resposta) => {
       //this.produto.id = resposta.id;
       this.produto.nome = resposta.nome;
-      this.produto.ano = resposta.ano;
       this.produto.modelo = resposta.modelo;
-      this.produto.motor = resposta.motor;
-      this.produto.numeroDeMotor = resposta.numeroDeMotor;
-      this.produto.cor = resposta.cor;
-      this.produto.referencia = resposta.referencia;
       this.produto.marca = resposta.marca;
-      this.produto.lado = resposta.lado;
-      this.produto.dianteira = resposta.dianteira;
-      this.produto.traseira = resposta.traseira;
-      this.produto.foto = resposta.foto;
-      this.produto.valor = resposta.valor;
-      this.produto.desconto = resposta.desconto;
+      this.produto.descricao = resposta.descricao;
+      //this.produto.foto = resposta.foto;
+      this.produto.valorUnitario = resposta.valorUnitario;
       this.produto.quantidade = resposta.quantidade;
     });
   }
@@ -76,7 +68,7 @@ export class ProdutoUpdateComponent implements OnInit {
       return 'O campo precisa ser preenchido.'
       //return 'O campo NOME deve conter entre 2 e 200 caracteres.'
     }
-    if(this.valor.invalid){
+    if(this.valorUnitario.invalid){
       //return 'O campo VALOR não pode ficar vazio.'
       return 'O campo precisa ser preenchido.'
     }

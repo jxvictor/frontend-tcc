@@ -14,8 +14,7 @@ export class ProdutoCreateComponent implements OnInit {
   produto: Produto = {}
   //produto: Produto = new Produto();
   nome = new FormControl('', [Validators.required]);
-  ano = new FormControl('', [Validators.required]);
-  valor = new FormControl('', [Validators.required]);
+  valorUnitario = new FormControl('', [Validators.required]);
   quantidade = new FormControl('', [Validators.required]);
   //texto = new FormControl("", [Validators.minLength(10)]);
 
@@ -45,11 +44,7 @@ export class ProdutoCreateComponent implements OnInit {
       return 'O campo precisa ser preenchido.'
       //return 'O campo NOME deve conter entre 2 e 200 caracteres.'
     }
-    if(this.ano.invalid){
-      return 'O campo precisa ser preenchido.'
-      //return 'O campo ANO não pode ficar vazio.'
-    }
-    if(this.valor.invalid){
+    if(this.valorUnitario.invalid){
       //return 'O campo VALOR não pode ficar vazio.'
       return 'O campo precisa ser preenchido.'
     }

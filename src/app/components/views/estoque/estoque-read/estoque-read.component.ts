@@ -19,7 +19,7 @@ export class EstoqueReadComponent implements OnInit{
   pageEvent!: PageEvent;
   //data!: Date;
 
-  displayedColumns: string[] = ['produto', 'quantidade', 'valor', 'formaDePagamento', 'data', 'tipo', 'acoes'];
+  displayedColumns: string[] = ['produto', 'quantidade', 'valorUnitario', 'data', 'tipo', 'acoes'];
 
   constructor(
     private service: EstoqueService,

@@ -4,13 +4,16 @@
         <a routerLink="/home" mat-list-item>
           Home
         </a>
-        <a routerLink="/produto" mat-list-item>
+        <a routerLink="/profile" mat-list-item *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_MODERATOR') || storageService.getUser().roles.includes('ROLE_ADMIN') || storageService.getUser().roles.includes('ROLE_USER')">
+          Meu perfil
+        </a>
+        <a routerLink="/produto" mat-list-item *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_MODERATOR') || storageService.getUser().roles.includes('ROLE_ADMIN')">
           Produtos
         </a>
-        <a routerLink="/estoque" mat-list-item>
+        <a routerLink="/estoque" mat-list-item *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_MODERATOR') || storageService.getUser().roles.includes('ROLE_ADMIN')">
           Controle Entrada/Saída
         </a>
-        <a routerLink="/usuario" mat-list-item *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_MODERATOR') || storageService.getUser().roles.includes('ROLE_ADMIN')">
+        <a routerLink="/usuario" mat-list-item *ngIf="storageService.isLoggedIn() && storageService.getUser().roles.includes('ROLE_ADMIN')">
           Usuários
         </a>
         <a (click)="deslogar()"class="logout" mat-list-item>

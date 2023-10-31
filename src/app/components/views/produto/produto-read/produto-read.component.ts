@@ -22,7 +22,7 @@ export class ProdutoReadComponent implements OnInit {
 
   searchTerm: string = '';
 
-  displayedColumns: string[] = ['nome', 'ano', 'modelo', 'referencia', 'marca', 'valor', 'quantidade', 'acoes'];
+  displayedColumns: string[] = ['nome', 'modelo', 'marca', 'descricao', 'valorUnitario', 'quantidade', 'acoes'];
 
   constructor(
     private service: ProdutoService,

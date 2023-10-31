@@ -17,8 +17,7 @@ export class EstoqueCreateEntradaComponent implements OnInit {
   //produto: Produto = new Produto();
   produto = new FormControl('', [Validators.required]);
   quantidade = new FormControl('', [Validators.required]);
-  valor = new FormControl('', [Validators.required]);
-  formaDePagamento = new FormControl('', [Validators.required]);
+  valorUnitario = new FormControl('', [Validators.required]);
   tipo = new FormControl('', [Validators.required]);
   //texto = new FormControl("", [Validators.minLength(10)]);
 
@@ -58,13 +57,9 @@ export class EstoqueCreateEntradaComponent implements OnInit {
       return 'O campo precisa ser preenchido.'
       //return 'O campo ANO não pode ficar vazio.'
     }
-    if(this.valor.invalid){
+    if(this.valorUnitario.invalid){
       //return 'O campo VALOR não pode ficar vazio.'
       return 'O campo precisa ser preenchido.'
-    }
-    if(this.formaDePagamento.invalid){
-      return 'O campo precisa ser preenchido.'
-      //return 'O campo QUANTIDADE não pode ficar vazio.'
     }
     if(this.tipo.invalid){
       return 'O campo precisa ser preenchido.'

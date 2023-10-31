@@ -16,18 +16,8 @@
 
       <mat-form-field class="form">
         <mat-label>Valor unitário</mat-label>
-        <input matInput [formControl]="valor" required [(ngModel)]="estoque.valor" type="number" name="valor" placeholder="Ex: 50.00">
-        <mat-error *ngIf="valor.invalid">{{getMessage()}}</mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="form">
-        <mat-label>Forma de pagamento</mat-label>
-        <mat-select [(ngModel)]="estoque.formaDePagamento" name="formaDePagamento">
-          <mat-option value="PIX">PIX</mat-option>
-          <mat-option value="DINHEIRO">DINHEIRO</mat-option>
-          <mat-option value="DÉBITO">DÉBITO</mat-option>
-          <mat-option value="CRÉDITO">CRÉDITO</mat-option>
-        </mat-select>
+        <input matInput [formControl]="valorUnitario" required [(ngModel)]="estoque.valorUnitario" type="number" name="valorUnitario" placeholder="Ex: 50.00">
+        <mat-error *ngIf="valorUnitario.invalid">{{getMessage()}}</mat-error>
       </mat-form-field>
   
     <div class="buttons">

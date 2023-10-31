@@ -18,68 +18,25 @@
               <th mat-header-cell *matHeaderCellDef> NOME PRODUTO </th>
               <td mat-cell *matCellDef="let row"> {{ row.nome }} </td>
             </ng-container>
-  
-            <!-- Weight Column -->
-            <ng-container matColumnDef="ano">
-              <th mat-header-cell *matHeaderCellDef> ANO </th>
-              <td mat-cell *matCellDef="let row"> {{ row.ano }} </td>
-            </ng-container>
-            <!-- Weight Column -->
+
             <ng-container matColumnDef="modelo">
               <th mat-header-cell *matHeaderCellDef> MODELO </th>
               <td mat-cell *matCellDef="let row"> {{ row.modelo }} </td>
             </ng-container>
-  
-            <ng-container matColumnDef="motor">
-              <th mat-header-cell *matHeaderCellDef> MOTOR </th>
-              <td mat-cell *matCellDef="let row"> {{ row.motor }} </td>
-            </ng-container>
-  
-            <ng-container matColumnDef="numeroDeMotor">
-              <th mat-header-cell *matHeaderCellDef> NÚMERO DE MOTOR </th>
-              <td mat-cell *matCellDef="let row"> {{ row.numeroDeMotor }} </td>
-            </ng-container>
-  
-            <ng-container matColumnDef="cor">
-              <th mat-header-cell *matHeaderCellDef> COR </th>
-              <td mat-cell *matCellDef="let row"> {{ row.cor }} </td>
-            </ng-container>
-  
-            <ng-container matColumnDef="referencia">
-              <th mat-header-cell *matHeaderCellDef> REFERÊNCIA </th>
-              <td mat-cell *matCellDef="let row"> {{ row.referencia }} </td>
-            </ng-container>
-
+            
             <ng-container matColumnDef="marca">
               <th mat-header-cell *matHeaderCellDef> MARCA </th>
               <td mat-cell *matCellDef="let row"> {{ row.marca }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="lado">
-              <th mat-header-cell *matHeaderCellDef> LADO </th>
-              <td mat-cell *matCellDef="let row"> {{ row.lado }} </td>
+            <ng-container matColumnDef="descricao">
+              <th mat-header-cell *matHeaderCellDef> DESCRIÇÃO </th>
+              <td mat-cell *matCellDef="let row"> {{ row.descricao }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="dianteira">
-              <th mat-header-cell *matHeaderCellDef> DIANTEIRA </th>
-              <td mat-cell *matCellDef="let row"> {{ row.dianteira }} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="traseira">
-              <th mat-header-cell *matHeaderCellDef> TRASEIRA </th>
-              <td mat-cell *matCellDef="let row"> {{ row.traseira }} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="foto">
-              <th mat-header-cell *matHeaderCellDef> FOTO </th>
-              <td mat-cell *matCellDef="let row">
-                <img [src]="row.foto" alt="foto" width="100">
-              </td>
-            </ng-container>
-
-            <ng-container matColumnDef="valor">
+            <ng-container matColumnDef="valorUnitario">
               <th mat-header-cell *matHeaderCellDef> VALOR </th>
-              <td mat-cell *matCellDef="let row"> {{ row.valor }} </td>
+              <td mat-cell *matCellDef="let row"> {{ row.valorUnitario }} </td>
             </ng-container>
 
             <ng-container matColumnDef="quantidade">
